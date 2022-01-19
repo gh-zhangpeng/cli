@@ -14,7 +14,7 @@ var serviceMethod string
 
 type File struct {
 	PackageName string
-	Imports []string
+	Imports     []string
 }
 
 type Controller struct {
@@ -65,7 +65,7 @@ var createCmd = &cobra.Command{
 		})
 		if err != nil {
 			fmt.Printf("创建 controller 失败，err: %s\n", err.Error())
-			return 
+			return
 		}
 
 		if len(serviceMethod) == 0 {
@@ -100,7 +100,6 @@ var createCmd = &cobra.Command{
 			return
 		}
 
-
 		fmt.Printf("创建完成，请前往 %s 查看创建的文件。", output)
 		//writer := bytes.NewBufferString("")
 		//err = targetTpl.Execute(writer, data)
@@ -118,7 +117,7 @@ func createFile(filePath string, tplPath string, fileData File, tplData interfac
 		fmt.Printf("检查文件是否存在失败，err: %s\n", err.Error())
 		return err
 	}
-	flag := os.O_RDWR|os.O_APPEND
+	flag := os.O_RDWR | os.O_APPEND
 	if !exists {
 		fmt.Println("文件不存在，创建文件")
 		flag = os.O_CREATE | flag
