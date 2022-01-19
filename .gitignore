@@ -18,3 +18,4 @@ cli
 # Dependency directories (remove the comment below to include it)
 # vendor/
 cli-output/
+.idea/
