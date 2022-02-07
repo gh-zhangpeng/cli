@@ -1,0 +1,17 @@
+{
+  "create": {
+    "output": {
+      "controller": "",
+      "service": ""
+    },
+    "apis": [
+      {
+        "path": "/user/addUser",
+        "comment": "添加用户",
+        "module": "",
+        "controllerFuncName": "",
+        "serviceFuncName": ""
+      }
+    ]
+  }
+}

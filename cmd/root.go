@@ -50,13 +50,12 @@ func initConfig() {
 		viper.SetConfigFile(cfgFile)
 	} else {
 		// Find home directory.
-		home, err := os.UserHomeDir()
-		cobra.CheckErr(err)
+		//home, err := os.UserHomeDir()
+		//cobra.CheckErr(err)
 
-		// Search config in home directory with name ".cli" (without extension).
-		viper.AddConfigPath(home)
-		viper.SetConfigType("yaml")
-		viper.SetConfigName(".cli")
+		viper.SetConfigName("config") // name of config file (without extension)
+		viper.SetConfigType("json") // REQUIRED if the config file does not have the extension in the name
+		viper.AddConfigPath("./config/") // optionally look for config in the working directory
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
